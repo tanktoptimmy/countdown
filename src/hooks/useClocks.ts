@@ -8,24 +8,17 @@ export default function useClocks() {
       "https://api-eu-west-2.hygraph.com/v2/cl8ylq0kw0atc01tc0dl4cqub/master",
       {
         query:`query Clocks {
-          clocks {
-            backgroundImage
-            backgroundColour {
-              hex
-              rgba {
-                a
-                b
-                g
-                r
+          clockLists {
+            clocks {
+              backgroundColour {
+                hex
               }
-              css
+              backgroundImage
+              event
+              id
+              startTime
             }
-            createdAt
-            event
             id
-            publishedAt
-            startTime
-            updatedAt
           }
         }`}
     );

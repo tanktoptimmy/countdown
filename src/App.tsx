@@ -32,11 +32,10 @@ function App() {
         <span>Error: {error.message}</span>
       ) : (
         <>
-          <div className="app">
-          
-            { data?.data.clocks &&
-              data.data.clocks.length > 0 ?
-                data.data.clocks.map(
+          <div className="app">      
+            { data?.data.clockLists[0].clocks &&
+              data.data.clockLists[0].clocks.length > 0 ?
+                data.data.clockLists[0].clocks.map(
                     cl => <Clock
                       id={cl.id}
                       key={cl.id}
