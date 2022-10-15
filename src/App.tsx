@@ -29,7 +29,6 @@ function App() {
     const clockLists = data?.data.clockLists;
     if(!clockLists) return;
 
-    console.log();
     return (
       <>
       <div className="bg-container">
@@ -37,7 +36,7 @@ function App() {
           resolution={1000}
           scale={200}
           speed={5}
-          bgColours={clockLists[1].backgroundColours} 
+          bgColours={clockLists[2].backgroundColours} 
           />
           
       </div>
@@ -52,9 +51,9 @@ function App() {
           <div className="app">      
             
              {
-            clockLists[1].clocks &&
-              clockLists[1].clocks.length > 0 ?
-                clockLists[1].clocks.map(
+            clockLists[2].clocks &&
+              clockLists[2].clocks.length > 0 ?
+                clockLists[2].clocks.map(
                     cl => <Clock
                       id={cl.id}
                       key={cl.id}
