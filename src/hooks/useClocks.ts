@@ -19,6 +19,14 @@ export default function useClocks() {
               startTime
             }
             id
+            name
+            backgroundColours {
+              rgba {
+                b
+                g
+                r
+              }
+            }
           }
         }`}
     );

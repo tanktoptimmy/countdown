@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { QueryClient } from "@tanstack/react-query";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
@@ -10,6 +10,7 @@ import useClocks from "./hooks/useClocks"
 
 function App() {
 
+  // const [clockNumber, setClockNumber]= useState(1);
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -22,9 +23,24 @@ function App() {
   });
 
 
-  const Clocks = () => {
+  const Main = () => {
     const { status, data, error, isFetching } = useClocks();
+
+    const clockLists = data?.data.clockLists;
+    if(!clockLists) return;
+
+    console.log();
     return (
+      <>
+      <div className="bg-container">
+          <Canvas
+          resolution={1000}
+          scale={200}
+          speed={5}
+          bgColours={clockLists[1].backgroundColours} 
+          />
+          
+      </div>
       <div className="main">
       { status === "loading" ? (
         "Loading..."
@@ -32,10 +48,13 @@ function App() {
         <span>Error: {error.message}</span>
       ) : (
         <>
+          <Hero title={clockLists[1].name}/>
           <div className="app">      
-            { data?.data.clockLists[0].clocks &&
-              data.data.clockLists[0].clocks.length > 0 ?
-                data.data.clockLists[0].clocks.map(
+            
+             {
+            clockLists[1].clocks &&
+              clockLists[1].clocks.length > 0 ?
+                clockLists[1].clocks.map(
                     cl => <Clock
                       id={cl.id}
                       key={cl.id}
@@ -53,6 +72,7 @@ function App() {
         </>
       )}
     </div>
+    </>
     )
   }
   
@@ -60,18 +80,13 @@ function App() {
 
   return (
     <>
-    <div className="bg-container">
-          <Canvas
-          resolution={1000}
-          scale={200}
-          speed={5}/>
-      </div>
+    
       <PersistQueryClientProvider
         client={queryClient}
         persistOptions={{ persister }}
       >
-        <Hero />
-        <Clocks/>
+        
+        <Main/>
       </PersistQueryClientProvider>
     </>
   );

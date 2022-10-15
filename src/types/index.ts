@@ -10,8 +10,20 @@ export type Clock = {
   startTime: string;
 };
 
+type Colours = {
+  r: string
+  g: string
+  b: string
+}
+type ClockList = {
+  clocks: Clock[];
+  name: string;
+  backgroundColours: Colours[]
+}
+
 export type ClocksData = {
   data: {
-    clocks:Clock[]
+    clockLists: ClockList[]
+    
   }
 }

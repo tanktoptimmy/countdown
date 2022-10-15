@@ -2,12 +2,14 @@ import React, { useRef, useEffect } from 'react';
 import { createNoise3D } from "simplex-noise";
 import './Canvas.css'
 
-const Canvas: React.FC<Props> = ({resolution, speed, scale}) => {
+const Canvas: React.FC<Props> = ({resolution, speed, scale, bgColours}) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const canvasCtxRef = React.useRef<CanvasRenderingContext2D | null>(null);
   const tRef = useRef(0);
   const rafRef = useRef(0);
   const simplex = useRef(createNoise3D());
+
+  
 
   const lerp = (x:number, x1:number, x2:number, y1:number, y2:number) =>
       y1 + (x - x1) * ((y2 - y1) / (x2 - x1));
@@ -21,8 +23,8 @@ const Canvas: React.FC<Props> = ({resolution, speed, scale}) => {
       return rgb;
     };
     const palette = [
-      [0, 212, 255],
-      [0, 102, 153],
+      [bgColours[0].rgba.r, bgColours[0].rgba.g, bgColours[0].rgba.b],
+      [bgColours[1].rgba.r, bgColours[1].rgba.g, bgColours[1].rgba.b],
     ];
 
   useEffect(() => {

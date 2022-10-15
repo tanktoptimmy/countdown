@@ -2,9 +2,9 @@ import React from 'react';
 import './Hero.css'
 
 
-const Hero = () => {
+const Hero = ({title}) => {
   return (<header className="hero">
-      <h1 className="hero-title">Blue Countdowns</h1>
+      <h1 className="hero-title">{title}</h1>
   </header>)
 };
 

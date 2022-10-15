@@ -7,7 +7,8 @@
 .hero-title {
   margin-block: 3rem;
   text-align: center;
-  color: rgba(255,255,255,0.5);
+  /* color: rgba(255,255,255,0.5); */
+  color: rgb(255, 255, 255,0.7);
   font-size: 3rem;
   line-height: 1em;
   text-shadow: 16px 14px 11px rgba(0,0,0,0.21);
