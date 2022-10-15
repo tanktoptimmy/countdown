@@ -1,0 +1,28 @@
+.hero {
+  isolation: isolate;
+  border: 1px solid transparent;
+  padding-block: 1rem;
+}
+
+.hero-title {
+  margin-block: 3rem;
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 3rem;
+  line-height: 1em;
+  text-shadow: 16px 14px 11px rgba(0,0,0,0.21);
+}
+
+@media (min-width: 640px) {
+  .hero-title{
+    font-size: 5rem;
+    margin-block: 4rem;;
+  }
+}
+
+@media (min-width: 980px) {
+  .hero-title{
+    margin-block: 5rem;;
+    font-size: 10rem;
+  }
+}

@@ -1,0 +1,40 @@
+.clockHolder {
+  background: rgba(2,0,36,1);
+  width: 320px;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  border-radius: 20px;
+  border: 3px solid rgb(0, 212, 255);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+}
+.clockShade {
+  height: 100%;
+  background: rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+
+.title {
+  margin: 18px 0 12px 0;
+  background: rgba(0,0,0,0.25);
+  border-radius: 5px;
+  padding: 12px 24px;
+  display: inline-block;
+}
+.clock{
+  display: flex;
+  background-color: rgba(0,0,0,0.4);
+  padding: 12px 4px;
+  border-radius: 1px 1px 20px 20px;
+}
+
+.digit {
+  width: 70px;
+  line-height: 1em;
+  margin-bottom: 18px;
+}
+
+.digit-title {
+  font-size: 8px;
+  line-height: 1em;
+}

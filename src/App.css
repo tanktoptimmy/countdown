@@ -1,0 +1,22 @@
+.app {
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  width: 320px;
+  z-index: 100;
+  isolation: isolate;
+  gap: 1rem;
+}
+
+.bg-container {
+  position: fixed;
+  height: 100vh;
+  z-index: 0;
+}
+@media (min-width: 640px) {
+  .app { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 980px) {
+  .app { grid-template-columns: repeat(3, 1fr); }
+}
