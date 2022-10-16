@@ -25,9 +25,8 @@ function App() {
 
   const Main = () => {
     const { status, data, error, isFetching } = useClocks();
-
     const clockLists = data?.data.clockLists;
-    if(!clockLists) return;
+    if(!clockLists) return (<div/>);
 
     return (
       <>
@@ -75,8 +74,6 @@ function App() {
     )
   }
   
-
-
   return (
     <>
     
