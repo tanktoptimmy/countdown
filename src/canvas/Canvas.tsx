@@ -9,7 +9,6 @@ const Canvas: React.FC<Props> = ({resolution, speed, scale, bgColours}) => {
   const rafRef = useRef(0);
   const simplex = useRef(createNoise3D());
 
-  
 
   const lerp = (x:number, x1:number, x2:number, y1:number, y2:number) =>
       y1 + (x - x1) * ((y2 - y1) / (x2 - x1));
@@ -57,10 +56,18 @@ const Canvas: React.FC<Props> = ({resolution, speed, scale, bgColours}) => {
   return <canvas ref={canvasRef} className="canvas" height="100px"></canvas>;
 };
 
+type Color = {
+  rgba: {
+    r: number
+    g: number
+    b: number
+  }
+}
 type Props ={
   resolution: number
   speed: number
   scale: number
+  bgColours: Color[]
 }
 
 export default Canvas;

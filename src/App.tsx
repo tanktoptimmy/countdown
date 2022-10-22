@@ -35,7 +35,7 @@ function App() {
           resolution={1000}
           scale={200}
           speed={5}
-          bgColours={clockLists[2].backgroundColours} 
+          bgColours={clockLists[0].backgroundColours} 
           />
           
       </div>
@@ -46,8 +46,8 @@ function App() {
         <span>Error: {error.message}</span>
       ) : (
         <>
-          <Hero title={clockLists[1].name}/>
-          <div className="app">      
+          <Hero title={clockLists[0].name}/>
+          <div className="app">
             
              {
             clockLists[2].clocks &&

@@ -11,9 +11,12 @@ export type Clock = {
 };
 
 type Colours = {
-  r: string
-  g: string
-  b: string
+  rgba: {
+    r: number
+    g: number
+    b: number
+    a: number
+  }
 }
 type ClockList = {
   clocks: Clock[];
@@ -24,6 +27,5 @@ type ClockList = {
 export type ClocksData = {
   data: {
     clockLists: ClockList[]
-    
   }
 }
