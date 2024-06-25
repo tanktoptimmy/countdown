@@ -24,8 +24,10 @@ function App() {
 
 
   const Main = () => {
+
     const { status, data, error, isFetching } = useClocks();
     const clockLists = data?.data.clockLists;
+    console.log(clockLists)
     if(!clockLists) return (<div/>);
 
     return (
@@ -37,7 +39,6 @@ function App() {
           speed={5}
           bgColours={clockLists[0].backgroundColours} 
           />
-          
       </div>
       <div className="main">
       { status === "loading" ? (
@@ -48,11 +49,10 @@ function App() {
         <>
           <Hero title={clockLists[0].name}/>
           <div className="app">
-            
              {
-            clockLists[2].clocks &&
-              clockLists[2].clocks.length > 0 ?
-                clockLists[2].clocks.map(
+            clockLists[0].clocks &&
+              clockLists[0].clocks.length > 0 ?
+                clockLists[0].clocks.map(
                     cl => <Clock
                       id={cl.id}
                       key={cl.id}
